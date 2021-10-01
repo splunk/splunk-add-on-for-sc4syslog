@@ -44,7 +44,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Docker meta
         id: docker_action_meta
-        uses: docker/metadata-action@v3.4.1
+        uses: docker/metadata-action@v3.5.0
         with:
           images: ghcr.io/${{ github.repository }}/container
           tags: |
@@ -57,7 +57,7 @@ jobs:
             type=ref,event=pr
       - name: matrix
         id: matrix
-        uses: splunk/addonfactory-test-matrix-action@v1.1.1
+        uses: splunk/addonfactory-test-matrix-action@v1.2.1
 
   compliance-sample-scanner:
     runs-on: ubuntu-latest
@@ -156,7 +156,7 @@ jobs:
         with:
           python-version: 3.7
       - uses: snyk/actions/setup@master
-      - uses: actions/setup-go@v2.1.3
+      - uses: actions/setup-go@v2.1.4
         with:
           go-version: "1.13"
       - name: Snyk monitor
@@ -362,7 +362,7 @@ jobs:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
       - name: Upload coverage to Codecov
         if: ${{ steps.checkcodecov.outputs.ENABLED == 'true' }}
-        uses: codecov/codecov-action@v2.0.2
+        uses: codecov/codecov-action@v2.1.0
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: ./coverage.xml
@@ -437,7 +437,7 @@ jobs:
 
       - name: Docker meta
         id: meta
-        uses: docker/metadata-action@v3
+        uses: docker/metadata-action@v3.5.0
         with:
           images: ghcr.io/${{ github.repository }}
           tags: |
