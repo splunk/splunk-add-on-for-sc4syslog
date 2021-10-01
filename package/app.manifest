@@ -1,10 +1,10 @@
 {
   "schemaVersion": "2.0.0",
   "info": {
-    "title": "Splunk Add-on for McAfee EPO Syslog",
+    "title": "Splunk Add-on for Splunk Connect for Syslog",
     "id": {
       "group": null,
-      "name": "Splunk_TA_mcafee_epo_syslog",
+      "name": "splunk-add-on-for-sc4syslog",
       "version": "1.0.0"
     },
     "author": [
@@ -15,7 +15,7 @@
       }
     ],
     "releaseDate": null,
-    "description": "Splunk Add-on for McAfee EPO Syslog",
+    "description": "Splunk Add-on for Splunk Connector for Syslog",
     "classification": {
       "intendedAudience": "IT Professionals",
       "categories": ["Security, Fraud & Compliance"],
