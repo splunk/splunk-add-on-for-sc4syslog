@@ -4,7 +4,7 @@
     "title": "Splunk Add-on for Splunk Connect for Syslog",
     "id": {
       "group": null,
-      "name": "splunk-add-on-for-sc4syslog",
+      "name": "Splunk_TA_splunk_connect_for_syslog",
       "version": "1.0.0"
     },
     "author": [
