@@ -15,7 +15,7 @@ python = "^3.7"
 
 [tool.poetry.dev-dependencies]
 splunk-add-on-ucc-framework = "^5.8.2"
-pytest-splunk-addon = "^1.9.4"
+pytest-splunk-addon = "^1.9.5"
 pytest-expect = "^1.1.0"
 
 [build-system]
