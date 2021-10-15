@@ -14,7 +14,7 @@ license = "Apache-2.0"
 python = "^3.7"
 
 [tool.poetry.dev-dependencies]
-splunk-add-on-ucc-framework = "^5.8.2"
+splunk-add-on-ucc-framework = "^5.9.0"
 pytest-splunk-addon = "^1.9.6"
 pytest-expect = "^1.1.0"
 
