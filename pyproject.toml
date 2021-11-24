@@ -1,8 +1,3 @@
-##
-## SPDX-FileCopyrightText: 2021 Splunk, Inc. <sales@splunk.com>
-## SPDX-License-Identifier: LicenseRef-Splunk-1-2020
-##
-##
 [tool.poetry]
 name = "splunk-add-on-for-sc4syslog"
 version = "0.1.0"
