@@ -1225,7 +1225,7 @@ jobs:
           exit 1
 
   publish:
-    if: ${{ github.event_name != 'pull_request' }}
+    if: always() && needs.pre-publish.result == 'success' && github.event_name != 'pull_request'
     needs:
       - pre-publish
     runs-on: ubuntu-latest
@@ -1294,7 +1294,7 @@ jobs:
 
   update-semver:
     name: release-set-git-tags
-    if: startsWith(github.ref, 'refs/tags/v')
+    if: always() && needs.publish.result == 'success' && startsWith(github.ref, 'refs/tags/v')
     needs:
       - publish
     runs-on: ubuntu-latest
