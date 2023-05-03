@@ -1,0 +1,219 @@
+<dashboard>
+  <label>SC4S Source Activity</label>
+  <row>    
+    <panel>
+      <chart>
+        <title>spl.mlog.per_host_thruput.kb</title>
+        <search>
+          <query>| mstats avg("spl.mlog.per_host_thruput.kb") prestats=true WHERE "index"="_metrics" AND [| rest splunk_server=local /servicesNS/nobody/SA-ITOA/itoa_interface/entity report_as=text
+    filter="{\"title\": \"$title$\"}"
+    fields="title,host" 
+| eval value=spath(value,"{}") 
+| mvexpand value 
+| eval host=spath(value, "host{}") 
+| fields + host | rename host as series
+| format ] span=10s
+| timechart avg("spl.mlog.per_host_thruput.kb") AS Avg span=10s
+| fields - _span*</query>
+          <earliest>-1h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="charting.axisY.abbreviation">auto</option>
+        <option name="charting.chart">line</option>
+        <option name="charting.chart.nullValueMode">connect</option>
+        <option name="charting.chart.showDataLabels">none</option>
+        <option name="charting.drilldown">none</option>
+        <option name="charting.fieldColors">{"Avg":"#1e93c6"}</option>
+        <option name="charting.fieldDashStyles">{"Avg":"solid"}</option>
+        <option name="charting.gridLinesX.showMajorLines">1</option>
+        <option name="charting.legend.mode">seriesCompare</option>
+        <option name="displayview">analytics_workspace</option>
+        <option name="refresh.display">progressbar</option>
+      </chart>
+    </panel>
+    <panel>
+        <chart>
+          <title>spl.mlog.per_host_thruput.kbps</title>
+          <search>
+            <query>| mstats avg("spl.mlog.per_host_thruput.kbps") prestats=true WHERE "index"="_metrics" AND [| rest splunk_server=local /servicesNS/nobody/SA-ITOA/itoa_interface/entity report_as=text
+              filter="{\"title\": \"$title$\"}"
+              fields="title,host" 
+          | eval value=spath(value,"{}") 
+          | mvexpand value 
+          | eval host=spath(value, "host{}") 
+          | fields + host | rename host as series
+          | format ] span=10s
+  | timechart avg("spl.mlog.per_host_thruput.kbps") AS Avg span=10s
+  | fields - _span*</query>
+            <earliest>-1h</earliest>
+            <latest>now</latest>
+          </search>
+          <option name="charting.axisY.abbreviation">auto</option>
+          <option name="charting.chart">line</option>
+          <option name="charting.chart.nullValueMode">connect</option>
+          <option name="charting.chart.showDataLabels">none</option>
+          <option name="charting.drilldown">none</option>
+          <option name="charting.fieldColors">{"Avg":"#1e93c6"}</option>
+          <option name="charting.fieldDashStyles">{"Avg":"solid"}</option>
+          <option name="charting.gridLinesX.showMajorLines">1</option>
+          <option name="charting.legend.mode">seriesCompare</option>
+          <option name="displayview">analytics_workspace</option>
+          <option name="refresh.display">progressbar</option>
+        </chart>
+      </panel>    
+  </row> 
+  <row>
+    <panel>
+      <chart>
+        <title>spl.mlog.per_host_thruput.max_age</title>
+        <search>
+          <query>| mstats avg("spl.mlog.per_host_thruput.max_age") prestats=true WHERE "index"="_metrics" AND [| rest splunk_server=local /servicesNS/nobody/SA-ITOA/itoa_interface/entity report_as=text
+            filter="{\"title\": \"$title$\"}"
+            fields="title,host" 
+        | eval value=spath(value,"{}") 
+        | mvexpand value 
+        | eval host=spath(value, "host{}") 
+        | fields + host | rename host as series
+        | format ] span=10s
+| timechart avg("spl.mlog.per_host_thruput.max_age") AS Avg span=10s
+| fields - _span*</query>
+            <earliest>-1h</earliest>
+            <latest>now</latest>
+        </search>
+        <option name="charting.drilldown">none</option>
+        <option name="charting.chart">line</option>
+        <option name="charting.chart.nullValueMode">connect</option>
+        <option name="charting.chart.showDataLabels">none</option>
+        <option name="charting.fieldColors">{"Avg":"#1e93c6"}</option>
+        <option name="charting.gridLinesX.showMajorLines">true</option>
+        <option name="charting.axisY.abbreviation">auto</option>
+        <option name="charting.legend.mode">seriesCompare</option>
+        <option name="charting.fieldDashStyles">{"Avg":"solid"}</option>
+        <option name="displayview">analytics_workspace</option>
+      </chart>
+    </panel>
+    <panel>
+      <chart>
+        <title>spl.mlog.per_host_thruput.avg_age</title>
+        <search>
+          <query>| mstats avg("spl.mlog.per_host_thruput.avg_age") prestats=true WHERE "index"="_metrics" AND [| rest splunk_server=local /servicesNS/nobody/SA-ITOA/itoa_interface/entity report_as=text
+            filter="{\"title\": \"$title$\"}"
+            fields="title,host" 
+        | eval value=spath(value,"{}") 
+        | mvexpand value 
+        | eval host=spath(value, "host{}") 
+        | fields + host | rename host as series
+        | format ] span=10s
+| timechart avg("spl.mlog.per_host_thruput.avg_age") AS Avg span=10s
+| fields - _span*</query>
+            <earliest>-1h</earliest>
+            <latest>now</latest>
+        </search>
+        <option name="charting.drilldown">none</option>
+        <option name="charting.chart">line</option>
+        <option name="charting.chart.nullValueMode">connect</option>
+        <option name="charting.chart.showDataLabels">none</option>
+        <option name="charting.fieldColors">{"Avg":"#1e93c6"}</option>
+        <option name="charting.gridLinesX.showMajorLines">true</option>
+        <option name="charting.axisY.abbreviation">auto</option>
+        <option name="charting.legend.mode">seriesCompare</option>
+        <option name="charting.fieldDashStyles">{"Avg":"solid"}</option>
+        <option name="displayview">analytics_workspace</option>
+      </chart>
+    </panel>
+  </row>  
+  <row>
+    <panel>
+      <title>Event Rate by sourcetype</title>
+      <chart>
+        <search>
+          <query>| tstats count where index=* sc4s_vendor_product=* 
+    [| rest splunk_server=local /servicesNS/nobody/SA-ITOA/itoa_interface/entity report_as=text
+        filter="{\"title\": \"$title$\"}"
+        fields="title,host" 
+    | eval value=spath(value,"{}") 
+    | mvexpand value 
+    | eval host=spath(value, "host{}") 
+    | fields + host 
+    | format
+        ]
+    by sourcetype,_time 
+| timechart sum(count) as val by sourcetype</query>
+          <earliest>-60m</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="charting.chart">line</option>
+        <option name="charting.drilldown">none</option>
+        <option name="refresh.display">preview</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <table>
+        <title>Data Summary</title>
+        <search>
+          <query>| tstats count where index=* sc4s_vendor_product=* 
+    [| rest splunk_server=local /servicesNS/nobody/SA-ITOA/itoa_interface/entity report_as=text
+        filter="{\"title\": \"$title$\"}"
+        fields="title,host" 
+    | eval value=spath(value,"{}") 
+    | mvexpand value 
+    | eval host=spath(value, "host{}") 
+    | fields + host 
+    | format
+        ]
+    by index,source,sourcetype | addcoltotals</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="drilldown">none</option>
+      </table>
+    </panel>
+    <panel>
+      <event>
+        <title>Malformed events</title>
+        <search>
+          <query>index=* sourcetype=sc4s:fallback sc4s_vendor_product=* 
+    [| rest splunk_server=local /servicesNS/nobody/SA-ITOA/itoa_interface/entity report_as=text
+        filter="{\"title\": \"$title$\"}"
+        fields="title,host" 
+    | eval value=spath(value,"{}") 
+    | mvexpand value 
+    | eval host=spath(value, "host{}") 
+    | fields + host 
+    | format
+        ]</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="list.drilldown">none</option>
+        <option name="refresh.display">progressbar</option>
+      </event>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <table>
+        <title>Data Path</title>
+        <search>
+          <query>| tstats count where index=* sc4s_vendor_product=* 
+    [| rest splunk_server=local /servicesNS/nobody/SA-ITOA/itoa_interface/entity report_as=text
+        filter="{\"title\": \"$title$\"}"
+        fields="title,host" 
+    | eval value=spath(value,"{}") 
+    | mvexpand value 
+    | eval host=spath(value, "host{}") 
+    | fields + host 
+    | format
+        ]
+    by sc4s_container,sc4s_destport,sc4s_proto,sc4s_syslog_format</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="refresh.display">progressbar</option>
+      </table>
+    </panel>
+  </row>
+</dashboard>
